@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MyTasks.ViewModel;
 
 namespace MyTasks
 {
@@ -18,7 +19,8 @@ namespace MyTasks
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
             return builder.Build();
         }
     }
