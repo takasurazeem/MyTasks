@@ -37,5 +37,12 @@ namespace MyTasks.ViewModel
                 Items.Remove(s);
             }
         }
+
+        [RelayCommand]
+        async Task Tap(string s)
+        {
+            // TODO: Dismiss the keyboard before navigation
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={s}");
+        }
     }
 }
